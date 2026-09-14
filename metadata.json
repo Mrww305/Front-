@@ -1,0 +1,6 @@
+{
+  "name": "MEGNITOO — Immersive Digital Experiences",
+  "description": "Crafting immersive digital experiences through the fusion of design, technology, and imagination.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
