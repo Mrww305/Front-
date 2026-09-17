@@ -30,7 +30,15 @@ export default function AboutSection() {
             <p className="text-neutral-400">
               From interactive 3D product visualizers to seamless scroll-driven narratives and spatial graphics, we craft digital products that captivate audiences and drive lasting, meaningful engagement.
             </p>
-            <div className="pt-4 flex items-center gap-6">
+            <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/10 space-y-2 text-sm text-neutral-300">
+              <div className="font-mono text-xs text-cyan-400 uppercase tracking-wider font-semibold">
+                Studio Engineering Ethos
+              </div>
+              <p className="text-xs text-neutral-400 font-light leading-relaxed">
+                Megnitoo is powered by <strong className="text-white">MrWorldWide pvt ltd</strong>, led by founder <strong className="text-white">Sajid Afridi (mrww305)</strong>. Our multidisciplinary lab creates production-ready WebGL experiences, enterprise RAG copilots, and multi-vertical analytics hubs.
+              </p>
+            </div>
+            <div className="pt-2 flex items-center gap-6">
               <div className="flex -space-x-3 overflow-hidden">
                 <div className="inline-block h-10 w-10 rounded-full ring-2 ring-[#050508] bg-gradient-to-tr from-violet-600 to-indigo-400 flex items-center justify-center text-xs font-bold">M</div>
                 <div className="inline-block h-10 w-10 rounded-full ring-2 ring-[#050508] bg-gradient-to-tr from-cyan-500 to-blue-500 flex items-center justify-center text-xs font-bold">E</div>

@@ -11,25 +11,25 @@ export const PROJECTS: Project[] = [
   {
     id: 'nebula-dashboard',
     title: 'Nebula Dashboard',
-    category: 'Web Application',
-    description: 'Real-time analytics platform with 3D data visualization and interactive topology graphs.',
+    category: 'Web & 3D Spatial',
+    description: 'Real-time analytics platform with 3D data visualization, eBPF low-latency mesh, and runtime debugging.',
     bgGradient: 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%)',
     client: 'Nebula Cloud Systems',
     year: '2024',
-    metrics: '99.99% Uptime, 3.2M Events/sec',
+    metrics: '0.8ms Latency, Full-Mesh Nodes',
     fullDetails: 'Engineered a high-throughput WebGL telemetry cockpit that turns complex cloud infrastructure telemetry into intuitive, interactive 3D spatial node networks and real-time GPU heatmaps.',
-    tags: ['WebGL', 'Three.js', 'React', 'WebSockets', 'Shaders'],
+    tags: ['WebGL', 'Three.js', 'eBPF Mesh', 'Active Debugger', 'WebSockets'],
     features: [
-      'GPU-accelerated vector field rendering',
-      'Sub-millisecond real-time event pipeline',
-      'Spatial clustering of distributed clusters',
-      'Accessible keyboard controls & high-contrast mode'
+      'Full-mesh 7-node bidirectional telemetry interconnect',
+      'eBPF Zero-RTT low latency protocol (<1.2ms P99)',
+      'Active runtime debugger with live streaming trace logs',
+      'Diagnostic roundtrip ping simulation with 0.00% packet loss'
     ]
   },
   {
     id: 'aurora-commerce',
     title: 'Aurora Commerce',
-    category: 'E-Commerce',
+    category: 'Web & 3D Spatial',
     description: 'Immersive shopping experience with AR product preview and spatial audio checkout.',
     bgGradient: 'linear-gradient(135deg, #0891b2 0%, #06b6d4 100%)',
     client: 'Aurora Luxury Goods',
@@ -47,7 +47,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'prism-studio',
     title: 'Prism Studio',
-    category: 'Creative Tool',
+    category: 'Web & 3D Spatial',
     description: 'AI-powered design suite with real-time multiplayer canvas and generative shaders.',
     bgGradient: 'linear-gradient(135deg, #db2777 0%, #ec4899 100%)',
     client: 'Prism Creative Labs',
@@ -65,7 +65,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'vertex-engine',
     title: 'Vertex Engine',
-    category: 'Game Development',
+    category: 'Web & 3D Spatial',
     description: 'Lightweight WebGL game engine tailored for micro-games and interactive narrative campaigns.',
     bgGradient: 'linear-gradient(135deg, #d97706 0%, #f59e0b 100%)',
     client: 'Vertex Interactive',
@@ -80,6 +80,114 @@ export const PROJECTS: Project[] = [
       'Zero-jank 60/120 FPS rendering pipeline'
     ]
   },
+  {
+    id: 'construction-blueprint',
+    title: 'Megnitoo Construction BIM',
+    category: 'Construction & Spatial',
+    description: 'Interactive 3D Architectural CAD & BIM blueprint engine with floor slicing and seismic load simulation.',
+    bgGradient: 'linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)',
+    client: 'Megnitoo Infrastructure / MrWorldWide',
+    year: '2024',
+    metrics: '142,500 sq ft, Zone 4 Seismic',
+    fullDetails: 'Comprehensive architectural CAD and structural engineering tool delivering in-browser 3D building exploration, orthographic floor-by-floor slicing, material toggling, and interactive caliper measurement.',
+    tags: ['Three.js', 'BIM Modeling', 'CAD Wireframe', 'Seismic Stress', 'Structural Engineering'],
+    features: [
+      'Interactive 6-tier floor-by-floor architectural cross-sectioning',
+      'Live PBR material toggle (High-tensile steel, concrete, structural glazing)',
+      'Simulated Zone 4 seismic stress deflection test',
+      'Real-time measurement caliper tool with elevation metrics'
+    ]
+  },
+  {
+    id: 'iqra-ai',
+    title: 'iQRA AI Enterprise Agent',
+    category: 'Enterprise Intelligence',
+    description: 'Enterprise-grade RAG-powered chatbot acting as central intelligence gateway for JW Corporation Pakistan.',
+    bgGradient: 'linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%)',
+    client: 'JW Corporation Pakistan',
+    year: '2024',
+    metrics: '38ms TTFT, 99.1% Grounded',
+    fullDetails: 'Autonomous enterprise conversational cockpit grounded on multi-tenant vector records across 7 business verticals, FBR statutory regulatory orders (SROs), and real-time trade databases.',
+    tags: ['RAG Pipeline', 'BGE-M3', 'Milvus Vector DB', 'Multi-Agent', 'FBR SROs'],
+    features: [
+      'Transparent multi-step agent reasoning trace logs',
+      'FBR customs SRO and tariff schedule grounding',
+      'Enterprise source document citations and confidence telemetry',
+      'Multi-tenant data isolation with dual-LLM guardrails'
+    ]
+  },
+  {
+    id: 'zalmi-fit',
+    title: 'Zalmi Fit Sports & Health',
+    category: 'Sports & Biometrics',
+    description: 'Comprehensive health, performance, and fitness tracking app for Peshawar Zalmi with 3D player biometrics.',
+    bgGradient: 'linear-gradient(135deg, #ca8a04 0%, #eab308 100%)',
+    client: 'Peshawar Zalmi (PSL)',
+    year: '2024',
+    metrics: '142.4 km/h release load, 15k Step Challenge',
+    fullDetails: 'High-octane sports performance dashboard featuring an interactive 3D biometric player hologram with clickable injury/fatigue inspection zones, live training simulators, and Babar Azam fitness benchmarks.',
+    tags: ['Three.js Hologram', 'Sports Biometrics', 'Peshawar Zalmi', 'Fan Health', 'Fitness Telemetry'],
+    features: [
+      'Interactive 3D holographic cricket athlete rig with joint stress mapping',
+      'Rotator cuff and patellar tendon fatigue diagnostic inspection',
+      'Live fan challenge simulator with step count, heart rate, and caloric burn',
+      'PSL athlete benchmark leaderboard comparison'
+    ]
+  },
+  {
+    id: 'jw-executive',
+    title: 'JW Executive Chairman Console',
+    category: 'Corporate Governance',
+    description: 'Secure real-time analytics and BI dashboard tailored for the Chairman and C-Suite of JW Corporation.',
+    bgGradient: 'linear-gradient(135deg, #b45309 0%, #f59e0b 100%)',
+    client: 'JW Corporation Pakistan',
+    year: '2024',
+    metrics: 'PKR 145.7B ($524M USD) Consolidated',
+    fullDetails: 'Executive governance platform consolidating JW Corporation Pakistan’s 7 business verticals (Automobile, Real Estate, Technology, Textile, Logistics, Packaging, Retail) with biometric Chairman vault clearance.',
+    tags: ['C-Level BI', '7 Verticals', 'Chairman Vault', 'Audit Trail', 'Corporate Governance'],
+    features: [
+      'Consolidated multi-vertical operating telemetry across all 7 subsidiaries',
+      'Chairman Confidential View with simulated biometric passcode authorization',
+      'Live EBITDA margin, revenue growth, and capital expenditure monitoring',
+      'Immutable cryptographic executive governance audit stream'
+    ]
+  },
+  {
+    id: 'pak-trade-intelligence',
+    title: 'Pakistan Trade Intelligence',
+    category: 'Macroeconomics & Trade',
+    description: 'Macroeconomic analysis tool tracking national exports, customs tariffs, SRO exemptions, and market trends.',
+    bgGradient: 'linear-gradient(135deg, #059669 0%, #10b981 100%)',
+    client: 'Pakistan Business Council / LCCI',
+    year: '2024',
+    metrics: '$30.8B Export Telemetry, FBR WeBOC',
+    fullDetails: 'Macroeconomic trade intelligence system analyzing Pakistan Bureau of Statistics (PBS) data, commodity export flows, live HS-Code customs tariffs, and foreign exchange peg sensitivity.',
+    tags: ['PBS Datasets', 'HS-Code Tariffs', 'FBR Customs', 'Macroeconomics', 'Exchange Rate Sim'],
+    features: [
+      'Top export sectors breakdown (Textiles, IT, Rice, Surgical, Sports)',
+      'Live Pakistan Customs tariff and landed duty calculator',
+      'SRO exemption tracking (SRO 656 EV concessions & clean energy)',
+      'Dynamic USD/PKR interbank exchange rate valuation simulator'
+    ]
+  },
+  {
+    id: 'sme-graphql-gateway',
+    title: 'SME GraphQL Gateway',
+    category: 'API & Infrastructure',
+    description: 'Robust GraphQL API layer serving trade data, logistics, and intelligence to Pakistani SMEs and LCCI members.',
+    bgGradient: 'linear-gradient(135deg, #be185d 0%, #ec4899 100%)',
+    client: 'LCCI & Chamber Network',
+    year: '2024',
+    metrics: '18ms Query Latency, Depth Limit: 6',
+    fullDetails: 'Developer playground and high-performance GraphQL API gateway providing Pakistani SMEs with secured, rate-limited access to tariff schedules, market trends, and Chamber of Commerce quotas.',
+    tags: ['GraphQL', 'Apollo Server', 'Rate Limiting', 'PostgreSQL RLS', 'Armor Security'],
+    features: [
+      'Interactive in-browser GraphQL query execution sandbox',
+      'Real-time JSON response payload with microsecond latency metrics',
+      'Strict query depth limitation (max depth 6) to eliminate DoS attacks',
+      'Chamber membership quota authentication and rate limiting indicators'
+    ]
+  }
 ];
 
 export const SERVICES: ServiceItem[] = [
@@ -117,34 +225,34 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     num: '05',
-    title: 'AI Integration',
-    description: 'Smart, adaptive solutions and intelligent interfaces designed for cutting-edge modern products.',
+    title: 'AI & Enterprise Systems',
+    description: 'Autonomous agents, enterprise RAG pipelines, and macro-intelligence architectures.',
     gradient: 'linear-gradient(135deg, hsl(150, 60%, 18%), hsl(170, 70%, 28%))',
     accentColor: '#10b981',
-    deliverables: ['Generative Pipelines', 'Intelligent Agents', 'Semantic Search', 'Adaptive UX']
+    deliverables: ['Enterprise RAG Systems', 'Multi-Agent Routing', 'GraphQL Gateways', 'BIM & 3D CAD Engines']
   },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    quote: 'Megnitoo transformed our digital presence. The 3D experience they created for our product launch was nothing short of breathtaking.',
+    quote: 'Megnitoo transformed our digital presence. The 3D experience and construction BIM CAD platform they built was nothing short of breathtaking.',
     author: 'Sarah Chen',
     role: 'CEO',
     company: 'TechVision Inc.',
     avatarBg: '#8b5cf6'
   },
   {
-    quote: 'Their attention to accessibility and performance is unmatched. Our Lighthouse scores went from 60 to 98 after their redesign.',
-    author: 'Marcus Johnson',
-    role: 'CTO',
-    company: 'DataFlow',
+    quote: 'The iQRA AI engine and Chairman executive dashboard consolidated our 7 business verticals flawlessly with sub-second response times.',
+    author: 'Tariq Mehmood',
+    role: 'Managing Director',
+    company: 'JW Corporation',
     avatarBg: '#06b6d4'
   },
   {
-    quote: 'Working with Megnitoo felt like having an extension of our own team. They truly understood our vision and exceeded every expectation.',
-    author: 'Elena Rodriguez',
-    role: 'Creative Director',
-    company: 'Bloom Studio',
-    avatarBg: '#ec4899'
+    quote: 'Zalmi Fit gave our athletes and fans a world-class biometric telemetry platform. Megnitoo delivers true craftsmanship.',
+    author: 'Javed Afridi',
+    role: 'Chairman',
+    company: 'Peshawar Zalmi',
+    avatarBg: '#f59e0b'
   },
 ];

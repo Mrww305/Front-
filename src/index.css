@@ -11,6 +11,10 @@
     --border: rgba(255, 255, 255, 0.08);
     --text: #f0f0f5;
     --text-muted: #9494a8;
+    --sat: env(safe-area-inset-top, 0px);
+    --sar: env(safe-area-inset-right, 0px);
+    --sab: env(safe-area-inset-bottom, 0px);
+    --sal: env(safe-area-inset-left, 0px);
   }
 
   html {
@@ -18,6 +22,8 @@
     overflow-x: hidden;
     background: #050508;
     color: #f0f0f5;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
@@ -25,24 +31,69 @@
     background: #050508;
     color: #f0f0f5;
     overflow-x: hidden;
+    /* Momentum scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+    /* Crisp subpixel font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, .font-display {
     font-family: 'Space Grotesk', sans-serif;
   }
+
+  /* Ergonomic mobile touch targets */
+  button, a, input, select {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Hardware accelerated spring physics & tactile feel better than Flutter */
+.touch-spring {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.15s ease;
+  will-change: transform;
+  transform: translateZ(0);
+}
+.touch-spring:active {
+  transform: scale(0.95) translateZ(0);
+}
+
+/* Fluid Horizontal Snap Carousel for mobile/tablets */
+.snap-scroll-x {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.snap-scroll-x::-webkit-scrollbar {
+  display: none;
+}
+.snap-scroll-x > * {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* Safe Area Inset Utility Classes */
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+.pt-safe {
+  padding-top: max(1rem, env(safe-area-inset-top));
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background: #07070c;
 }
 ::-webkit-scrollbar-thumb {
   background: rgba(139, 92, 246, 0.3);
-  border-radius: 4px;
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(139, 92, 246, 0.6);

@@ -176,8 +176,8 @@ export default function ShowcaseScene() {
     window.addEventListener('mouseup', onMouseUp);
 
     container.addEventListener('touchstart', onTouchStart, { passive: true });
-    window.addEventListener('touchmove', onTouchMove, { passive: true });
-    window.addEventListener('touchend', onTouchEnd);
+    container.addEventListener('touchmove', onTouchMove, { passive: true });
+    container.addEventListener('touchend', onTouchEnd, { passive: true });
 
     const animate = (t: number) => {
       animId = requestAnimationFrame(animate);
@@ -256,7 +256,7 @@ export default function ShowcaseScene() {
       <div
         ref={containerRef}
         id="showcase3d"
-        className="w-full h-full min-h-[360px] md:min-h-[480px] rounded-3xl overflow-hidden cursor-grab active:cursor-grabbing border border-white/10 bg-white/[0.02]"
+        className="w-full h-full min-h-[360px] md:min-h-[480px] rounded-3xl overflow-hidden cursor-grab active:cursor-grabbing border border-white/10 bg-white/[0.02] touch-pan-y"
         aria-label="Interactive 3D product showcase - drag to rotate"
         role="img"
       />

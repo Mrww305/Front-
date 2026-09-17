@@ -1,6 +1,6 @@
 {
-  "name": "MEGNITOO — Immersive Digital Experiences",
-  "description": "Crafting immersive digital experiences through the fusion of design, technology, and imagination.",
+  "name": "MEGNITOO — Immersive Digital Experiences & Enterprise POC Suite",
+  "description": "Unified enterprise transformation platform and 3D digital experiences studio. Featuring 3D Construction BIM CAD, iQRA AI for JW Corporation, Zalmi Fit sports biometrics, JW Executive BI, Pakistan Trade Intelligence, and SME GraphQL Gateway. Founded by Sajid Afridi (mrww305) under MrWorldWide pvt ltd.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
