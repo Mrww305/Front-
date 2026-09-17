@@ -1,6 +1,5 @@
 import { useState, useEffect, FormEvent, ChangeEvent } from 'react';
-import { Send, Check, Sparkles, BarChart2, Mail, Building, User } from 'lucide-react';
-import FormAnalytics from './FormAnalytics';
+import { Send, Check, Sparkles, Mail, Building, User, Globe, ArrowUpRight } from 'lucide-react';
 
 export default function ContactSection() {
   const [name, setName] = useState('');
@@ -8,7 +7,6 @@ export default function ContactSection() {
   const [message, setMessage] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showAnalytics, setShowAnalytics] = useState(false);
 
   // Forms Telemetry & Analytics State
   const [keystrokes, setKeystrokes] = useState(0);
@@ -104,7 +102,7 @@ export default function ContactSection() {
         </p>
 
         {/* Corporate Quick Credentials Bar */}
-        <div className="mb-10 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs font-mono text-neutral-400">
+        <div className="mb-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-mono text-neutral-400">
           <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10">
             <Building className="w-3.5 h-3.5 text-cyan-400" />
             <span>Company: <strong className="text-white">MrWorldWide pvt ltd</strong></span>
@@ -114,6 +112,17 @@ export default function ContactSection() {
             <span>Founder: <strong className="text-white">Sajid Afridi (mrww305)</strong></span>
           </div>
           <a
+            href="https://sajidafridi.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cyan-950/40 border border-cyan-500/40 text-cyan-300 hover:text-white hover:border-cyan-400 transition-all shadow-sm"
+            title="Open sajidafridi.com in a new tab"
+          >
+            <Globe className="w-3.5 h-3.5 text-cyan-400" />
+            <span>Portfolio: <strong className="text-white">sajidafridi.com</strong></span>
+            <ArrowUpRight className="w-3 h-3 text-cyan-400" />
+          </a>
+          <a
             href="mailto:ceo@megnitoo.com"
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10 hover:border-violet-400 hover:text-white transition-colors"
           >
@@ -121,42 +130,6 @@ export default function ContactSection() {
             <span>Email: <strong className="text-white">ceo@megnitoo.com</strong></span>
           </a>
         </div>
-
-        {/* Form & Analytics Toggle Bar */}
-        <div className="flex justify-center mb-6">
-          <button
-            type="button"
-            onClick={() => setShowAnalytics(!showAnalytics)}
-            className={`px-5 py-2.5 rounded-full text-xs font-semibold flex items-center gap-2 transition-all border shadow-lg ${
-              showAnalytics
-                ? 'bg-cyan-500 text-black border-cyan-400 font-bold'
-                : 'bg-white/5 hover:bg-white/10 text-neutral-300 border-white/10 hover:text-white'
-            }`}
-          >
-            <BarChart2 className="w-4 h-4" />
-            <span>{showAnalytics ? 'Hide Forms Analytics' : 'Live Forms Analytics & GTM Stream'}</span>
-            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-              Active
-            </span>
-          </button>
-        </div>
-
-        {/* Active Forms Analytics Panel */}
-        {showAnalytics && (
-          <div className="mb-10 text-left animate-in fade-in duration-300">
-            <FormAnalytics
-              currentSession={{
-                nameFilled: name.trim().length > 0,
-                emailFilled: email.trim().length > 0,
-                messageFilled: message.trim().length > 0,
-                timeOnForm,
-                keystrokes,
-                submissionCount: isSubmitted ? 1 : 0,
-                lastEvent,
-              }}
-            />
-          </div>
-        )}
 
         {/* Contact Form */}
         <form

@@ -136,6 +136,16 @@ export default function Navbar({ onOpenCommandPalette }: NavbarProps) {
           >
             Contact
           </a>
+          <a
+            href="https://sajidafridi.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium text-cyan-300 bg-cyan-950/40 border border-cyan-500/30 hover:bg-cyan-500/20 hover:border-cyan-400 hover:text-white transition-all duration-300 shadow-sm"
+            title="Visit Founder's Site (opens in new tab)"
+          >
+            <span>sajidafridi.com</span>
+            <ArrowUpRight className="w-3 h-3 text-cyan-400" />
+          </a>
         </nav>
 
         {/* CTA & Quick Action Buttons */}
@@ -269,6 +279,16 @@ export default function Navbar({ onOpenCommandPalette }: NavbarProps) {
           className="font-display text-xl font-bold text-neutral-300 hover:text-white transition-colors"
         >
           Contact
+        </a>
+        <a
+          href="https://sajidafridi.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-mono text-base font-semibold text-cyan-300 hover:text-white transition-colors flex items-center gap-2 px-5 py-2 rounded-full bg-cyan-950/40 border border-cyan-500/30"
+          title="Visit Founder's Site (opens in new tab)"
+        >
+          <span>sajidafridi.com</span>
+          <ArrowUpRight className="w-4 h-4" />
         </a>
         <button
           type="button"

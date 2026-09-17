@@ -1,4 +1,4 @@
-import { Building, User, Mail, MessageSquare, Github, Shield } from 'lucide-react';
+import { Building, User, Mail, MessageSquare, Github, Shield, Globe } from 'lucide-react';
 
 export default function Footer() {
   const scrollTo = (id: string) => {
@@ -137,7 +137,7 @@ export default function Footer() {
                   onClick={() => scrollTo('contact')}
                   className="hover:text-white transition-colors"
                 >
-                  Forms & Telemetry
+                  Direct Inquiry
                 </button>
               </li>
             </ul>
@@ -149,6 +149,17 @@ export default function Footer() {
               Ecosystem
             </h4>
             <ul className="space-y-2.5 text-sm text-neutral-400">
+              <li>
+                <a
+                  href="https://sajidafridi.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 hover:text-white transition-colors flex items-center gap-2"
+                >
+                  <Globe className="w-4 h-4 text-cyan-400" />
+                  <span>sajidafridi.com</span>
+                </a>
+              </li>
               <li>
                 <a
                   href="https://discord.com/channels/1509473503475142746"
