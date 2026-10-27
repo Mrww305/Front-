@@ -7,6 +7,7 @@ export default function ContactSection() {
   const [message, setMessage] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
   // Forms Telemetry & Analytics State
   const [keystrokes, setKeystrokes] = useState(0);
@@ -47,29 +48,40 @@ export default function ContactSection() {
     }
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!name || !email || !message) return;
+    if (!name || !email || !message || isSubmitting) return;
 
     setIsSubmitting(true);
     setLastEvent('form_submission_attempt');
+    setError('');
 
-    if (typeof window !== 'undefined') {
-      (window as any).dataLayer = (window as any).dataLayer || [];
-      (window as any).dataLayer.push({
-        event: 'generate_lead',
-        value: 1,
-        currency: 'USD',
-        lead_source: 'megnitoo_contact_form',
-        form_completion_time: timeOnForm,
-        keystrokes_total: keystrokes,
-        founder: 'Sajid Afridi (mrww305)',
-        company: 'MrWorldWide pvt ltd',
+    try {
+      // Shared intake on the main domain; the source tag names this property.
+      const response = await fetch('https://sajidafridi.com/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ name, email, message, source: 'megnitoo.blog' }),
       });
-    }
+      const payload = (await response.json().catch(() => ({}))) as { ok?: boolean; error?: string };
+      if (!response.ok || payload.ok !== true) {
+        throw new Error(payload.error || 'send_failed');
+      }
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+      if (typeof window !== 'undefined') {
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        (window as any).dataLayer.push({
+          event: 'generate_lead',
+          value: 1,
+          currency: 'USD',
+          lead_source: 'megnitoo_contact_form',
+          form_completion_time: timeOnForm,
+          keystrokes_total: keystrokes,
+          founder: 'Sajid Afridi (mrww305)',
+          company: 'MrWorldWide pvt ltd',
+        });
+      }
+
       setIsSubmitted(true);
       setLastEvent('form_submission_success');
 
@@ -79,7 +91,12 @@ export default function ContactSection() {
         setEmail('');
         setMessage('');
       }, 5000);
-    }, 650);
+    } catch {
+      setLastEvent('form_submission_error');
+      setError('Could not transmit right now. Email ceo@megnitoo.com directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -196,6 +213,10 @@ export default function ContactSection() {
               className="w-full px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 transition-all resize-none text-sm"
             />
           </div>
+
+          {error && (
+            <p className="text-xs text-rose-400" role="alert">{error}</p>
+          )}
 
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2 text-xs text-neutral-400">
